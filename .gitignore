@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# C 编译产物
+*.out
+*.o
+*.dSYM/
+
+# 当前项目里的可执行文件示例
+day01/main
+day01/0[0-9]_*
+day01/1[0-9]_*
+day01/2[0-9]_*
+day01/3[0-9]_*
+

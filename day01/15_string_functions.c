@@ -30,6 +30,7 @@ int main(void)
     printf("source 长度：%zu\n", strlen(source));
 
     strcat(target, source);
+    strcat(target, "source");
     printf("拼接后：%s\n", target);
 
     printf("strcmp(\"abc\", \"abd\") = %d\n", strcmp("abc", "abd"));

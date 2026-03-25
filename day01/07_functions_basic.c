@@ -20,7 +20,10 @@
 
 #include <stdio.h>
 
+// 函数声明（函数原型）
 int add(int a, int b);
+int add(int a, int b);
+// int add(int a, int b, int c); // 错误：函数重载在 C 语言中不支持
 
 int add(int a, int b)
 {
