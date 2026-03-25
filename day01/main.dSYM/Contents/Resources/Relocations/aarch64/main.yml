@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/didi/Desktop/my-project/c-code/day01/main'
+relocations:     []
+...
