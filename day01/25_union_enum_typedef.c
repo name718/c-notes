@@ -42,6 +42,7 @@ int main(void)
     uint age = 20;
 
     number.int_value = 100;
+    number.float_value = 3.14f; // 注意：这会覆盖之前的 int_value
 
     printf("union 中的 int_value = %d\n", number.int_value);
     printf("today = %d\n", today);

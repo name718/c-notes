@@ -28,3 +28,23 @@
 # strlen 返回的是不是数组总大小？
 # 为什么 strcpy 有风险？
 # strcmp
+# * 和 & 分别是什么作用？
+# arr 和 &arr[0] 是否一样？
+# 数组名是不是指针？
+# C 中有没有引用传递？
+# 什么场景会用到二级指针？
+# char **argv 是什么？
+# 野指针和悬空指针区别？
+# 为什么 free 后置 NULL 是好习惯？
+# malloc / calloc / realloc
+# 只要声明了指针，就必须写 free + NULL 吗？
+# 栈和堆区别？
+# 全局变量和 static 局部变量常放哪里？
+# malloc、calloc、realloc、free 的基本用法
+# malloc 和 calloc 区别？
+# 为什么会内存泄漏？
+# 什么是结构体对齐？
+# 为什么要对齐？
+# struct 和 union 区别？
+# enum 的作用？
+# 小数的二进制？
