@@ -35,7 +35,7 @@ static void run_tests(void)
     assert(lengthOfLastWord(s3) == 6);
 }
 
-#ifdef RUN_TESTS
+#ifndef LEETCODE_SUBMISSION
 int main(void)
 {
     run_tests();

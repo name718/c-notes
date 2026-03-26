@@ -26,6 +26,19 @@ void merge(int *nums1, int nums1Size, int m, int *nums2, int nums2Size, int n)
     (void)n;
 
     /* TODO: 在这里完成具体实现 */
+    int i = m - 1; // nums1 的最后一个有效元素下标
+    int j = n - 1; // nums2 的最后一个元素下标
+    int k = m + n - 1; // nums1 的最后一个位置下标
+    while (i >= 0 && j >= 0) {
+        if (nums1[i] > nums2[j]) {
+            nums1[k--] = nums1[i--];
+        } else {
+            nums1[k--] = nums2[j--];
+        }
+    }
+    while (j >= 0) {
+        nums1[k--] = nums2[j--];    
+    }
 }
 
 static void assert_array_equal(const int *actual, const int *expected, int size)
@@ -65,7 +78,7 @@ static void run_tests(void)
     }
 }
 
-#ifdef RUN_TESTS
+#ifndef LEETCODE_SUBMISSION
 int main(void)
 {
     run_tests();

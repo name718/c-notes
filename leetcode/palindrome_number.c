@@ -35,7 +35,7 @@ static void run_tests(void)
     assert(isPalindrome(0) == true);
 }
 
-#ifdef RUN_TESTS
+#ifndef LEETCODE_SUBMISSION
 int main(void)
 {
     run_tests();

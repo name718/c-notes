@@ -37,7 +37,7 @@ static void run_tests(void)
     assert(search(nums, 6, 12) == 5);
 }
 
-#ifdef RUN_TESTS
+#ifndef LEETCODE_SUBMISSION
 int main(void)
 {
     run_tests();

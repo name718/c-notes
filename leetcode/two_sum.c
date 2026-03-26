@@ -74,7 +74,7 @@ static void run_tests(void)
     }
 }
 
-#ifdef RUN_TESTS
+#ifndef LEETCODE_SUBMISSION
 int main(void)
 {
     run_tests();
