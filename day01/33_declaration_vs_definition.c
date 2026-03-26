@@ -24,12 +24,12 @@ int global_number = 10;
 extern int global_number;
 
 void show_message(void);
+void show_message(void);
 
 void show_message(void)
 {
     printf("这是函数定义。\n");
 }
-
 int main(void)
 {
     printf("global_number = %d\n", global_number);
