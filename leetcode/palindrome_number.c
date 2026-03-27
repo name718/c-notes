@@ -24,7 +24,20 @@ bool isPalindrome(int x)
     (void)x;
 
     /* TODO: 在这里完成具体实现 */
-    return false;
+    if (x < 0) return false;
+    if (x == 0) return true;
+    if (x % 10 == 0) return false;
+    
+    int temp = x;
+    int reserve_x = 0;
+    
+    while(temp > 0) {
+        int last = temp % 10;
+        temp = temp / 10;
+        reserve_x = reserve_x * 10 + last;
+    }
+    
+    return reserve_x == x;
 }
 
 static void run_tests(void)
