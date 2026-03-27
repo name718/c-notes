@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 /*
  * 题目：最后一个单词的长度
@@ -21,7 +22,18 @@ int lengthOfLastWord(char *s)
     (void)s;
 
     /* TODO: 在这里完成具体实现 */
-    return 0;
+    int len = strlen(s);
+    int last = len - 1;
+    int count = 0;
+    for (; last >= 0; last--) {
+        if (s[last] != ' ') {
+            count += 1;
+        }
+        if (s[last] == ' ' && count > 0) {
+            break ;
+        }
+    }
+    return count;
 }
 
 static void run_tests(void)
