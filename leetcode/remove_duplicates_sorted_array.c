@@ -1,36 +1,34 @@
 #include <assert.h>
 #include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 /*
  * LeetCode 题号：26
  * 题目：Remove Duplicates from Sorted Array
- * 地址：https://leetcode.cn/problems/remove-duplicates-from-sorted-array/
- */
-
-/*
- * 题目：删除有序数组中的重复项
- * 难度：简单
- * 练习点：有序数组、双指针、原地修改、返回新长度
- *
- * 题意（改写）：
- * 给你一个非递减排序的数组 nums，
- * 请原地删除重复元素，使每个元素只出现一次，
- * 并返回删除后数组的新长度。
- *
- * 新长度范围内的元素需要保持原有相对顺序。
- *
- * 示例：
- * 输入：nums = [1,1,2]
- * 输出：2，前两个元素变为 [1,2]
  */
 
 int removeDuplicates(int *nums, int numsSize)
 {
-    (void)nums;
-    (void)numsSize;
+    // 数组为空直接返回 0
+    if (numsSize == 0) {
+        return 0;
+    }
 
-    /* TODO: 在这里完成具体实现 */
-    return 0;
+    // 慢指针：指向新数组最后一个位置
+    int slow = 0;
+
+    // 快指针：遍历整个数组
+    for (int fast = 1; fast < numsSize; fast++) {
+        // 发现不一样的数字，就把它放到慢指针下一位
+        if (nums[fast] != nums[slow]) {
+            slow++;
+            nums[slow] = nums[fast];
+        }
+    }
+
+    // 新长度 = slow + 1
+    return slow + 1;
 }
 
 static void assert_prefix_equal(const int *actual, const int *expected, int size)
