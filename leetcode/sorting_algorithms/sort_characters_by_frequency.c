@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：451
  * 题目：Sort Characters By Frequency
- * 地址：https://leetcode.com/problems/sort-characters-by-frequency/
+ * 地址：https://leetcode.cn/problems/sort-characters-by-frequency/
  */
 
 /*

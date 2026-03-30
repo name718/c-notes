@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：136
  * 题目：Single Number
- * 地址：https://leetcode.com/problems/single-number/
+ * 地址：https://leetcode.cn/problems/single-number/
  */
 
 /*

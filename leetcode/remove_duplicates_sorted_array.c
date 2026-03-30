@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：26
  * 题目：Remove Duplicates from Sorted Array
- * 地址：https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ * 地址：https://leetcode.cn/problems/remove-duplicates-from-sorted-array/
  */
 
 /*

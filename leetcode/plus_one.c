@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：66
  * 题目：Plus One
- * 地址：https://leetcode.com/problems/plus-one/
+ * 地址：https://leetcode.cn/problems/plus-one/
  */
 
 /*

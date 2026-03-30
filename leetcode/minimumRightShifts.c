@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：2855
  * 题目：Minimum Right Shifts to Sort the Array
- * 地址：https://leetcode.com/problems/minimum-right-shifts-to-sort-the-array/
+ * 地址：https://leetcode.cn/problems/minimum-right-shifts-to-sort-the-array/
  */
 
 // 判断是否是升序数组

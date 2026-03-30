@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：9
  * 题目：Palindrome Number
- * 地址：https://leetcode.com/problems/palindrome-number/
+ * 地址：https://leetcode.cn/problems/palindrome-number/
  */
 
 /*

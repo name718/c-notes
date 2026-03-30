@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：145
  * 题目：Binary Tree Postorder Traversal
- * 地址：https://leetcode.com/problems/binary-tree-postorder-traversal/
+ * 地址：https://leetcode.cn/problems/binary-tree-postorder-traversal/
  */
 
 /*

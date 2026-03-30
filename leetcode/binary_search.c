@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：704
  * 题目：Binary Search
- * 地址：https://leetcode.com/problems/binary-search/
+ * 地址：https://leetcode.cn/problems/binary-search/
  */
 
 /*

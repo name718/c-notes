@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：2273
  * 题目：Find Resultant Array After Removing Anagrams
- * 地址：https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/
+ * 地址：https://leetcode.cn/problems/find-resultant-array-after-removing-anagrams/
  */
 
 // 给你一个下标从 0 开始的字符串数组 words ，其中 words[i] 由小写英文字符组成。

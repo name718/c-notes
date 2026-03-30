@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：344
  * 题目：Reverse String
- * 地址：https://leetcode.com/problems/reverse-string/
+ * 地址：https://leetcode.cn/problems/reverse-string/
  */
 
 /*

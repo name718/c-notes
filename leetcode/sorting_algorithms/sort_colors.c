@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：75
  * 题目：Sort Colors
- * 地址：https://leetcode.com/problems/sort-colors/
+ * 地址：https://leetcode.cn/problems/sort-colors/
  */
 
 /*

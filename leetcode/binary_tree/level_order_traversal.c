@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：102
  * 题目：Binary Tree Level Order Traversal
- * 地址：https://leetcode.com/problems/binary-tree-level-order-traversal/
+ * 地址：https://leetcode.cn/problems/binary-tree-level-order-traversal/
  */
 
 /*

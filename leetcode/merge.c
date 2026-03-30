@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：88
  * 题目：Merge Sorted Array
- * 地址：https://leetcode.com/problems/merge-sorted-array/
+ * 地址：https://leetcode.cn/problems/merge-sorted-array/
  */
 
 /*

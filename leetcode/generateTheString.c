@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：1374
  * 题目：Generate a String With Characters That Have Odd Counts
- * 地址：https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/
+ * 地址：https://leetcode.cn/problems/generate-a-string-with-characters-that-have-odd-counts/
  */
 
 // 生成每种字符都是奇数个的字符串

@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：1122
  * 题目：Relative Sort Array
- * 地址：https://leetcode.com/problems/relative-sort-array/
+ * 地址：https://leetcode.cn/problems/relative-sort-array/
  */
 
 /*

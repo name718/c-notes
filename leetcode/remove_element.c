@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：27
  * 题目：Remove Element
- * 地址：https://leetcode.com/problems/remove-element/
+ * 地址：https://leetcode.cn/problems/remove-element/
  */
 
 /*

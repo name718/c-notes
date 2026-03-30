@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：56
  * 题目：Merge Intervals
- * 地址：https://leetcode.com/problems/merge-intervals/
+ * 地址：https://leetcode.cn/problems/merge-intervals/
  */
 
 /*

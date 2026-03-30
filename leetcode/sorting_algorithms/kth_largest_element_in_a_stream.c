@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：703
  * 题目：Kth Largest Element in a Stream
- * 地址：https://leetcode.com/problems/kth-largest-element-in-a-stream/
+ * 地址：https://leetcode.cn/problems/kth-largest-element-in-a-stream/
  */
 
 /*

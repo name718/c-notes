@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：144
  * 题目：Binary Tree Preorder Traversal
- * 地址：https://leetcode.com/problems/binary-tree-preorder-traversal/
+ * 地址：https://leetcode.cn/problems/binary-tree-preorder-traversal/
  */
 
 /*

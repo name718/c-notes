@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：58
  * 题目：Length of Last Word
- * 地址：https://leetcode.com/problems/length-of-last-word/
+ * 地址：https://leetcode.cn/problems/length-of-last-word/
  */
 
 /*

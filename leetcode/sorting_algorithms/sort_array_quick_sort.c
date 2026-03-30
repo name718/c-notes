@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：912
  * 题目：Sort an Array
- * 地址：https://leetcode.com/problems/sort-an-array/
+ * 地址：https://leetcode.cn/problems/sort-an-array/
  */
 
 /*

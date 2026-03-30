@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：35
  * 题目：Search Insert Position
- * 地址：https://leetcode.com/problems/search-insert-position/
+ * 地址：https://leetcode.cn/problems/search-insert-position/
  */
 
 /*

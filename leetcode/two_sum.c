@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：1
  * 题目：Two Sum
- * 地址：https://leetcode.com/problems/two-sum/
+ * 地址：https://leetcode.cn/problems/two-sum/
  */
 
 /*

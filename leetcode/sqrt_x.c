@@ -4,7 +4,7 @@
 /*
  * LeetCode 题号：69
  * 题目：Sqrt(x)
- * 地址：https://leetcode.com/problems/sqrtx/
+ * 地址：https://leetcode.cn/problems/sqrtx/
  */
 
 /*

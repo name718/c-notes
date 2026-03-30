@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：973
  * 题目：K Closest Points to Origin
- * 地址：https://leetcode.com/problems/k-closest-points-to-origin/
+ * 地址：https://leetcode.cn/problems/k-closest-points-to-origin/
  */
 
 /*

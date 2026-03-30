@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：94
  * 题目：Binary Tree Inorder Traversal
- * 地址：https://leetcode.com/problems/binary-tree-inorder-traversal/
+ * 地址：https://leetcode.cn/problems/binary-tree-inorder-traversal/
  */
 
 /*

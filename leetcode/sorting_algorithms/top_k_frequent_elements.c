@@ -5,7 +5,7 @@
 /*
  * LeetCode 题号：347
  * 题目：Top K Frequent Elements
- * 地址：https://leetcode.com/problems/top-k-frequent-elements/
+ * 地址：https://leetcode.cn/problems/top-k-frequent-elements/
  */
 
 /*
