@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：704
+ * 题目：Binary Search
+ * 地址：https://leetcode.com/problems/binary-search/
+ */
+
+/*
  * 题目：二分查找
  * 难度：简单
  * 练习点：有序数组、循环、二分查找、边界处理

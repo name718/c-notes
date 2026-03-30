@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：26
+ * 题目：Remove Duplicates from Sorted Array
+ * 地址：https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ */
+
+/*
  * 题目：删除有序数组中的重复项
  * 难度：简单
  * 练习点：有序数组、双指针、原地修改、返回新长度

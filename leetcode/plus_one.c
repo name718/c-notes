@@ -3,6 +3,12 @@
 #include <stdlib.h>
 
 /*
+ * LeetCode 题号：66
+ * 题目：Plus One
+ * 地址：https://leetcode.com/problems/plus-one/
+ */
+
+/*
  * 题目：加一
  * 难度：简单
  * 练习点：数组、进位、动态内存、返回数组

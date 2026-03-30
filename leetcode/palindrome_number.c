@@ -3,6 +3,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：9
+ * 题目：Palindrome Number
+ * 地址：https://leetcode.com/problems/palindrome-number/
+ */
+
+/*
  * 题目：回文数
  * 难度：简单
  * 练习点：整数、取模、除法、循环、条件判断

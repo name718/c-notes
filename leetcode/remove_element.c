@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：27
+ * 题目：Remove Element
+ * 地址：https://leetcode.com/problems/remove-element/
+ */
+
+/*
  * 题目：移除元素
  * 难度：简单
  * 练习点：数组、双指针、原地修改、返回新长度

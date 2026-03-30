@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/*
+ * LeetCode 题号：2855
+ * 题目：Minimum Right Shifts to Sort the Array
+ * 地址：https://leetcode.com/problems/minimum-right-shifts-to-sort-the-array/
+ */
+
 // 判断是否是升序数组
 bool isSortedAsc(int* nums, int numsSize) {
     for (int i = 1; i < numsSize; i++) {

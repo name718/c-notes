@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：69
+ * 题目：Sqrt(x)
+ * 地址：https://leetcode.com/problems/sqrtx/
+ */
+
+/*
  * 题目：x 的平方根
  * 难度：简单
  * 练习点：整数、二分查找、边界处理、防止溢出

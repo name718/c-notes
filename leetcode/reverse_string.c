@@ -3,6 +3,12 @@
 #include <string.h>
 
 /*
+ * LeetCode 题号：344
+ * 题目：Reverse String
+ * 地址：https://leetcode.com/problems/reverse-string/
+ */
+
+/*
  * 题目：反转字符串
  * 难度：简单
  * 练习点：字符数组、双指针、交换、字符串处理

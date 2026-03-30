@@ -3,6 +3,12 @@
 #include <string.h>
 
 /*
+ * LeetCode 题号：58
+ * 题目：Length of Last Word
+ * 地址：https://leetcode.com/problems/length-of-last-word/
+ */
+
+/*
  * 题目：最后一个单词的长度
  * 难度：简单
  * 练习点：字符串、字符遍历、空格处理、边界判断

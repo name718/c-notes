@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * LeetCode 题号：2273
+ * 题目：Find Resultant Array After Removing Anagrams
+ * 地址：https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/
+ */
+
 // 给你一个下标从 0 开始的字符串数组 words ，其中 words[i] 由小写英文字符组成。
 
 // 在一步操作中，需要选出任一下标 i ，从 words 中 删除 words[i] 。其中下标 i 需要同时满足下述两个条件：

@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：35
+ * 题目：Search Insert Position
+ * 地址：https://leetcode.com/problems/search-insert-position/
+ */
+
+/*
  * 题目：搜索插入位置
  * 难度：简单
  * 练习点：有序数组、二分查找、边界处理

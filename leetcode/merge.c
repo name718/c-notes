@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：88
+ * 题目：Merge Sorted Array
+ * 地址：https://leetcode.com/problems/merge-sorted-array/
+ */
+
+/*
  * 题目：合并两个有序数组
  * 难度：简单
  * 练习点：数组、双指针、下标、原地修改

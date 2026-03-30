@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 /*
+ * LeetCode 题号：136
+ * 题目：Single Number
+ * 地址：https://leetcode.com/problems/single-number/
+ */
+
+/*
  * 题目：只出现一次的数字
  * 难度：简单
  * 练习点：数组、异或运算、位运算基础

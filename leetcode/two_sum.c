@@ -3,6 +3,12 @@
 #include <stdlib.h>
 
 /*
+ * LeetCode 题号：1
+ * 题目：Two Sum
+ * 地址：https://leetcode.com/problems/two-sum/
+ */
+
+/*
  * 题目：两数之和
  * 难度：简单
  * 练习点：数组、双重循环、指针、动态内存、返回数组
