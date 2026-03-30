@@ -7,12 +7,31 @@
 # C 编译产物
 *.out
 *.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
 *.dSYM/
 
-# 当前项目里的可执行文件示例
-day01/main
-day01/0[0-9]_*
-day01/1[0-9]_*
-day01/2[0-9]_*
-day01/3[0-9]_*
+# C 编译中间文件（预处理/汇编/依赖/覆盖率等）
+*.i
+*.ii
+*.s
+*.d
+*.gcno
+*.gcda
+*.gcov
+*.gch
+*.pch
+a.out
 
+# 运行时产物
+*.bin
+
+# 当前项目中的无后缀可执行文件
+/code/main
+/code/[0-9][0-9]_*
+/leetcode/*
+!/leetcode/*.c
