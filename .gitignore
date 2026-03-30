@@ -33,5 +33,6 @@ a.out
 # 当前项目中的无后缀可执行文件
 /code/main
 /code/[0-9][0-9]_*
-/leetcode/*
-!/leetcode/*.c
+/leetcode/**
+!/leetcode/**/
+!/leetcode/**/*.c
