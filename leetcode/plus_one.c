@@ -33,7 +33,29 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
     }
 
     /* TODO: 在这里完成具体实现 */
-    return NULL;
+    *returnSize = digitsSize; // 默认返回原数组长度
+    int carry = 1;
+
+    for(int i = digitsSize - 1; i > -1; i --) {
+        int sum = digits[i] + carry;
+        digits[i] = sum % 10;
+        carry = sum / 10;
+    }
+    if (carry) {
+        *returnSize += 1;
+        int* res = (int*)malloc(*returnSize * sizeof(int));
+        res[0] = 1;
+        for (int i = 1; i < *returnSize; i ++) {
+            res[i] = 0;
+        }
+        return res;
+    }
+
+    int* res = (int*)malloc(*returnSize * sizeof(int));
+    for (int i = 0; i < *returnSize; i ++) {
+            res[i] = digits[i];
+    }
+    return res;
 }
 
 static void assert_array_equal(const int *actual, const int *expected, int size)
