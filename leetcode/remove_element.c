@@ -30,7 +30,13 @@ int removeElement(int *nums, int numsSize, int val)
     (void)val;
 
     /* TODO: 在这里完成具体实现 */
-    return 0;
+    int slow = 0;
+    for (int fast = 0; fast < numsSize; fast++) {
+        if (nums[fast] != val) {
+            nums[slow++] = nums[fast];
+        }
+    }
+    return slow;
 }
 
 static void assert_prefix_equal(const int *actual, const int *expected, int size)
