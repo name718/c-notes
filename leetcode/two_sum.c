@@ -26,6 +26,10 @@
  * 输出：[0,1]
  */
 
+int cmp(const void* a, const void* b) {
+    return *(int*)a - *(int*)b;
+}
+
 int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 {
     (void)nums;
@@ -37,6 +41,35 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize)
     }
 
     /* TODO: 在这里完成具体实现 */
+    // 暴力
+    // 分配返回数组的空间（2个整数）
+    int *answer = (int*)malloc(2 * sizeof(int));
+    if (answer == NULL) {
+        if (returnSize != NULL) {
+            *returnSize = 0;
+        }
+        return NULL;
+    }
+    
+    // 暴力双重循环查找
+    for (int i = 0; i < numsSize - 1; i++) {
+        for (int j = i + 1; j < numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+                answer[0] = i;
+                answer[1] = j;
+                if (returnSize != NULL) {
+                    *returnSize = 2;
+                }
+                return answer;
+            }
+        }
+    }
+    
+    // 理论上题目保证有解，不会执行到这里
+    free(answer);
+    if (returnSize != NULL) {
+        *returnSize = 0;
+    }
     return NULL;
 }
 
