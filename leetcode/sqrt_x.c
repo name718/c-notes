@@ -26,7 +26,28 @@ int mySqrt(int x)
     (void)x;
 
     /* TODO: 在这里完成具体实现 */
-    return 0;
+    int left = 1;
+    int right = x;
+    int answer;
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (mid == x / mid) {
+            return mid;
+        }
+
+        if (mid > x / mid) {
+            right = mid - 1;
+        }
+
+        if (mid < x / mid) {
+            answer = mid;
+            left = mid + 1;
+        }
+    }
+    
+    return answer;
 }
 
 static void run_tests(void)
