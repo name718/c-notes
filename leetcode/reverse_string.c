@@ -28,6 +28,14 @@ void reverseString(char *s, int sSize)
     (void)sSize;
 
     /* TODO: 在这里完成具体实现 */
+    int left = 0;
+    int right = sSize - 1;
+    while (left <= right)
+    {
+        int temp = s[left];
+        s[left++] = s[right];
+        s[right--] = temp;
+    }
 }
 
 static void run_tests(void)
