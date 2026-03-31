@@ -26,12 +26,26 @@
 
 int searchInsert(int *nums, int numsSize, int target)
 {
-    (void)nums;
-    (void)numsSize;
-    (void)target;
+    int left = 0;
+    int right = numsSize - 1;
 
-    /* TODO: 在这里完成具体实现 */
-    return -1;
+    while (left <= right)
+    {
+        int mid = (left + right) / 2;
+        int num = nums[mid];
+
+        if (num == target) {
+            return mid;  // 👈 这里你写成了 return left，错了！
+        }
+        if (num < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    // 👈 最后一定要 return left！你之前漏了
+    return left;
 }
 
 static void run_tests(void)
