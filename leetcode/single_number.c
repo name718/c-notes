@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
  * LeetCode 题号：136
@@ -21,13 +22,22 @@
  * 输出：1
  */
 
+ int cmp(const void* a, const void* b){
+    return *(int*)a - *(int*)b;
+ }
+
 int singleNumber(int *nums, int numsSize)
 {
     (void)nums;
     (void)numsSize;
 
     /* TODO: 在这里完成具体实现 */
-    return 0;
+    // 先排序
+    int result = 0;
+    for (int i = 0; i < numsSize; i++) {
+        result ^= nums[i];
+    }
+    return result;
 }
 
 static void run_tests(void)
