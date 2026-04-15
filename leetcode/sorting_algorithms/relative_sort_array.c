@@ -24,24 +24,37 @@
  * 3. 将剩余未写入元素按升序补到末尾。
  */
 
-int *relativeSortArray(int *arr1,
-                       int arr1Size,
-                       int *arr2,
-                       int arr2Size,
-                       int *returnSize)
-{
-    (void)arr1;
-    (void)arr1Size;
-    (void)arr2;
-    (void)arr2Size;
-
-    if (returnSize != NULL) {
-        *returnSize = 0;
+int* relativeSortArray(int* arr1, int arr1Size, int* arr2, int arr2Size, int* returnSize) {
+    int cnt[1001] = {0};
+    // 1. 统计 arr1 每个数字出现次数
+    for (int i = 0; i < arr1Size; i++) {
+        cnt[arr1[i]]++;
     }
 
-    /* TODO: 在这里完成具体实现 */
-    return NULL;
+    int* res = (int*)malloc(sizeof(int) * arr1Size);
+    int idx = 0;
+
+    // 2. 按 arr2 顺序输出
+    for (int i = 0; i < arr2Size; i++) {
+        int num = arr2[i];
+        while (cnt[num] > 0) {
+            res[idx++] = num;
+            cnt[num]--;
+        }
+    }
+
+    // 3. 剩下数字从小到大输出
+    for (int i = 0; i <= 1000; i++) {
+        while (cnt[i] > 0) {
+            res[idx++] = i;
+            cnt[i]--;
+        }
+    }
+
+    *returnSize = arr1Size;
+    return res;
 }
+
 
 #ifndef LEETCODE_SUBMISSION
 int main(void)
