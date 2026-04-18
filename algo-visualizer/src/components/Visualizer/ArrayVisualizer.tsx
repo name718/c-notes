@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Snapshot } from '../../store/useAlgorithmStore';
+import type { Snapshot } from '../../store/useAlgorithmStore';
 
 interface ArrayVisualizerProps {
   snapshot: Snapshot;

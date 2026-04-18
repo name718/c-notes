@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0F0F0F;
+  --color-sidebar: #1A1A1A;
+  --color-border: #2D2D2D;
+  --color-accent: #00E5FF;
+  --color-accent-dim: rgba(0, 229, 255, 0.1);
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

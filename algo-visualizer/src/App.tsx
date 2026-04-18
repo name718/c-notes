@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { 
   Play, 
   Pause, 
@@ -9,7 +9,7 @@ import {
   Database,
   Settings,
   HelpCircle,
-  Github,
+  Globe,
   Layout as LayoutIcon
 } from 'lucide-react';
 import { useAlgorithmStore } from './store/useAlgorithmStore';
@@ -59,8 +59,6 @@ function App() {
       interval = window.setInterval(() => {
         nextStep();
       }, 1100 - speed);
-    } else if (currentStepIndex >= steps.length - 1) {
-      // 播放结束
     }
     return () => clearInterval(interval);
   }, [isPlaying, currentStepIndex, speed, steps.length, nextStep]);
@@ -83,7 +81,7 @@ function App() {
         </div>
         <div className="mt-auto pb-2 text-gray-500">
           <a href="https://github.com" target="_blank" rel="noreferrer">
-            <Github size={20} className="hover:text-white cursor-pointer transition-colors" />
+            <Globe size={20} className="hover:text-white cursor-pointer transition-colors" />
           </a>
         </div>
       </aside>

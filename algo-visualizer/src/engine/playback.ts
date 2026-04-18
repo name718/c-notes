@@ -1,4 +1,4 @@
-import { Snapshot } from '../store/useAlgorithmStore';
+import type { Snapshot } from '../store/useAlgorithmStore';
 
 /**
  * 将算法生成器运行到结束，并收集所有 yield 的快照。

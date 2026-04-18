@@ -1,4 +1,4 @@
-import { Snapshot } from '../../store/useAlgorithmStore';
+import type { Snapshot } from '../../store/useAlgorithmStore';
 
 /**
  * 选择排序算法生成器
