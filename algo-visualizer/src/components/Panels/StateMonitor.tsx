@@ -8,7 +8,7 @@ interface StateMonitorProps {
 export const StateMonitor: React.FC<StateMonitorProps> = ({ pointers, description }) => {
   return (
     <div className="p-4 border-t border-border bg-background">
-      <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">Runtime State</h3>
+      <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">运行时状态</h3>
       <div className="grid grid-cols-2 gap-2 text-xs font-mono">
         {Object.entries(pointers).map(([name, value]) => (
           <div key={name} className="bg-white/5 p-2 rounded flex justify-between items-center border border-white/5">

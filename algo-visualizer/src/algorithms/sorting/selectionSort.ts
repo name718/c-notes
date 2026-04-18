@@ -20,7 +20,7 @@ export function* selectionSortGenerator(arr: number[]): Generator<Snapshot, void
     data: [...currentArr],
     pointers: {},
     activeLines: [1, 2],
-    description: 'Starting Selection Sort'
+    description: '开始选择排序'
   };
 
   for (let i = 0; i < n; i++) {
@@ -29,7 +29,7 @@ export function* selectionSortGenerator(arr: number[]): Generator<Snapshot, void
       data: [...currentArr],
       pointers: { i, minIdx },
       activeLines: [3],
-      description: `Set initial minIdx to ${i}`
+      description: `将初始最小值索引设为 ${i}`
     };
 
     for (let j = i + 1; j < n; j++) {
@@ -37,7 +37,7 @@ export function* selectionSortGenerator(arr: number[]): Generator<Snapshot, void
         data: [...currentArr],
         pointers: { i, minIdx, j },
         activeLines: [4, 5],
-        description: `Comparing index ${j} with current min index ${minIdx}`
+        description: `比较索引 ${j} 与当前最小值索引 ${minIdx}`
       };
 
       if (currentArr[j] < currentArr[minIdx]) {
@@ -46,7 +46,7 @@ export function* selectionSortGenerator(arr: number[]): Generator<Snapshot, void
           data: [...currentArr],
           pointers: { i, minIdx, j },
           activeLines: [5],
-          description: `Found smaller element, update minIdx to ${j}`
+          description: `发现更小元素，更新最小值索引为 ${j}`
         };
       }
     }
@@ -57,7 +57,7 @@ export function* selectionSortGenerator(arr: number[]): Generator<Snapshot, void
         data: [...currentArr],
         pointers: { i, minIdx },
         activeLines: [7],
-        description: `Swapping elements at index ${i} and ${minIdx}`
+        description: `交换索引 ${i} 和 ${minIdx} 的元素`
       };
     }
   }
@@ -66,6 +66,6 @@ export function* selectionSortGenerator(arr: number[]): Generator<Snapshot, void
     data: [...currentArr],
     pointers: {},
     activeLines: [],
-    description: 'Selection Sort completed'
+    description: '选择排序完成'
   };
 }
