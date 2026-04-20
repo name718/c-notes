@@ -8,7 +8,7 @@ int lengthOfLongestSubstring(char* s) {
         lastPosition[i] = -1;
     }
 
-    int left = 0;
+    int left = 0;// 滑动窗口的左边
     int maxLen = 0;
 
     for (int right = 0; s[right] != '\0'; right ++){
