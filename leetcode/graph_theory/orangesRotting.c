@@ -51,6 +51,7 @@ int orangesRotting(int **grid, int gridSize, int *gridColSize)
     }
 
     int time = 0;
+    int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     while (head < tail)
     {
@@ -61,36 +62,48 @@ int orangesRotting(int **grid, int gridSize, int *gridColSize)
         for (int i = 0; i < size; i++)
         {
             Point curr = queue[head++]; // 出队
+            for (int d = 0; d < 4; d++)
+            {
+                int nr = curr.r + dirs[d][0]; // 新的行号
+                int nc = curr.c + dirs[d][1]; // 新的列号
 
-            // 下
-            if (curr.r + 1 < rows && grid[curr.r + 1][curr.c] == FRESH_ORANGE)
-            {
-                grid[curr.r + 1][curr.c] = ROTTEN_ORANGE; // 标记腐烂
-                freshCount--;
-                queue[tail++] = (Point){curr.r + 1, curr.c};
+                // 检查是否越界，以及是否为新鲜橘子
+                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] == FRESH_ORANGE)
+                {
+                    grid[nr][nc] = ROTTEN_ORANGE; // 标记腐烂
+                    freshCount--;
+                    queue[tail++] = (Point){nr, nc};
+                }
             }
-            // 上
-            if (curr.r - 1 >= 0 && grid[curr.r - 1][curr.c] == FRESH_ORANGE)
-            {
-                grid[curr.r - 1][curr.c] = ROTTEN_ORANGE;
-                freshCount--;
-                queue[tail++] = (Point){curr.r - 1, curr.c};
-            }
-            // 右
-            if (curr.c + 1 < cols && grid[curr.r][curr.c + 1] == FRESH_ORANGE)
-            {
-                grid[curr.r][curr.c + 1] = ROTTEN_ORANGE;
-                freshCount--;
-                queue[tail++] = (Point){curr.r, curr.c + 1};
-            }
+            // // 下
+            // if (curr.r + 1 < rows && grid[curr.r + 1][curr.c] == FRESH_ORANGE)
+            // {
+            //     grid[curr.r + 1][curr.c] = ROTTEN_ORANGE; // 标记腐烂
+            //     freshCount--;
+            //     queue[tail++] = (Point){curr.r + 1, curr.c};
+            // }
+            // // 上
+            // if (curr.r - 1 >= 0 && grid[curr.r - 1][curr.c] == FRESH_ORANGE)
+            // {
+            //     grid[curr.r - 1][curr.c] = ROTTEN_ORANGE;
+            //     freshCount--;
+            //     queue[tail++] = (Point){curr.r - 1, curr.c};
+            // }
+            // // 右
+            // if (curr.c + 1 < cols && grid[curr.r][curr.c + 1] == FRESH_ORANGE)
+            // {
+            //     grid[curr.r][curr.c + 1] = ROTTEN_ORANGE;
+            //     freshCount--;
+            //     queue[tail++] = (Point){curr.r, curr.c + 1};
+            // }
 
-            // 左（你原来写错成 curr.r-1，帮你修正）
-            if (curr.c - 1 >= 0 && grid[curr.r][curr.c - 1] == FRESH_ORANGE)
-            {
-                grid[curr.r][curr.c - 1] = ROTTEN_ORANGE;
-                freshCount--;
-                queue[tail++] = (Point){curr.r, curr.c - 1};
-            }
+            // // 左（你原来写错成 curr.r-1，帮你修正）
+            // if (curr.c - 1 >= 0 && grid[curr.r][curr.c - 1] == FRESH_ORANGE)
+            // {
+            //     grid[curr.r][curr.c - 1] = ROTTEN_ORANGE;
+            //     freshCount--;
+            //     queue[tail++] = (Point){curr.r, curr.c - 1};
+            // }
         }
         // 每走完一层 才加1分钟
         (head < tail) && (time++);
