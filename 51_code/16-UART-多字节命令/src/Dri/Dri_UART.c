@@ -1,0 +1,175 @@
+#include "Dri_UART.h"
+
+// 定义变量保存接收到的一字节的数据
+// static char s_received_byte = 0;
+
+// 定义变量 标记是否接收完一个字节的数据 1表示已接收完
+static bit s_is_received_byte = 0;
+// 定义变量 标记是否发送完一个字节的数据 1表示已发完，0表示正在发送
+static bit s_is_transmited_byte = 1;
+
+// 定义字符数组，保存接收到多字节数据
+static char s_received_bytes[10];
+// 定义变量，标记多个字节数据是否接收完成
+static bit s_is_received_bytes = 0;
+// 定义变量，记录字符数组要添加的位置下标
+static u8 s_index = 0;
+
+/**
+ * @brief UART 初始化
+ *
+ */
+void Dri_UART_Init()
+{
+    // 1. 工作模式 -----------------------------------------------------------
+    // 设置位工作模式1,8位UART，无校验位，波特率可配置
+    SM0 = 0;
+    SM1 = 1;
+
+    // 2. 设置波特率、配置定时器1 ------------------------------------------------------------------
+    // 设置为 9600 波特率
+
+    // 2.1 设置是否2分频，设置为0，PCON & 01111111
+    PCON &= 0x7F;
+
+    // 2.2 设置定时器1的工作模式，设置成模式2,8位自动重装载
+    TMOD &= 0x0F; // 将高4位全置为0， TMOD & 0b00001111
+    TMOD |= 0x20; // 将高4位设置为 0010, TMOD | 0b0010 0000, CATE=0,C/T=0,M1M0=10
+
+    // 2.3 计算并设置定时器1的起始值
+    /*
+        溢出率=9600*32;
+
+        每次计数脉冲时间: 1/11059200 × 12  合： 12/11059200
+        溢出一次的时间： 1/溢出率 合：1/(9600*32)
+        溢出一次需要多少个计数脉冲：   溢出一次的时间/每次计数脉冲时间  合： 1/(9600*32) / (12/11059200)
+        计算脉冲计数器起始值： 最大值 - 溢出一次需要的计数脉冲  合 256 - 1/(9600*32) / (12/11059200)
+    */
+    TH1 = 253; // TH1寄存器存储起始值
+    TL1 = 253; // TL1寄存器用作计数
+
+    // 2.4 定时器1开始计数
+    TR1 = 1;
+
+    // 3. 接收相关配置 --------------------------------------------------------------------------
+    // 3.1 允许接收数据
+    REN = 1;
+    // 3.2 不检测停止位
+    SM2 = 0;
+
+    // 4. 串口中断配置  --------------------------------------------------------------------------
+    // 4.1 打开中断总开关
+    EA = 1;
+    // 4.2 打开串口中断开关
+    ES = 1;
+}
+
+/**
+ * @brief 接收单个字节数据
+ *
+ * @param ch 将接收到的单字节数据存入该地址
+ * @return bit 1表示接收成功 0表示接收失败
+ */
+bit Dri_UART_ReceiveChar(char *ch)
+{
+    if (s_is_received_byte)
+    {
+        *ch = SBUF;
+        s_is_received_byte = 0;
+        return 1;
+    }
+
+    return 0;
+}
+
+/**
+ * @brief 接收多个字节数据（多字节指令），换行作为指令结束符
+ * 
+ * @param str 将接收到的多个字节的数据存入该字符串中
+ * @return bit 1表示接收成功 0表示接收失败
+ */
+bit Dri_UART_ReceiveStr(char *str)
+{
+    u8 i;
+    // 判断多字节指令是否接收完毕
+    if (s_is_received_bytes)
+    {
+        // 遍历字符数组
+        for (i = 0; i < s_index; i++)
+        {
+            str[i] = s_received_bytes[i];
+        }
+        // 添加字符串结束标记
+        str[i] = '\0';
+
+        // 重置标记
+        s_is_received_bytes = 0;
+        s_index = 0;
+
+        return 1;
+    }
+    return 0;
+}
+
+/**
+ * @brief 发送单个字节数据
+ *
+ * @param ch 要发送的数据
+ */
+void Dri_UART_TransmitChar(char ch)
+{
+    // 等待上次发送完成
+    while (s_is_transmited_byte == 0)
+        ;
+
+    // 给发送缓冲器赋值，发送控制器就会自动发送
+    SBUF = ch;
+    // 标记正在发送
+    s_is_transmited_byte = 0;
+}
+
+/**
+ * @brief 发送多个字节的数据
+ * 
+ * @param str 要发送的字符串
+ */
+void Dri_UART_TransmitStr(char *str)
+{
+    // 取到字符串结束标记，循环停止
+    while (*str != '\0')
+    {
+        Dri_UART_TransmitChar(*str); // 发送当前指向的字符
+        str++;  // 指针后移
+    }
+}
+
+// 串口中断服务程序
+void Dri_UART_Handler() interrupt 4
+{
+    // 发送完一帧数据触发的中断
+    if (TI == 1)
+    {   
+        // 标记已经发送完成
+        s_is_transmited_byte = 1;
+        // 将标志位置0
+        TI = 0;
+    }
+
+    // 接收完一帧数据触发的中断
+    if (RI == 1)
+    {
+        if (SBUF != '\n')
+        {
+            s_received_bytes[s_index] = SBUF;
+            s_index++;
+        }
+        else
+        {
+            s_is_received_bytes = 1;        // 标志该多字节指令接收完毕
+        }
+
+        s_is_received_byte = 1;
+        // 将标志位置0
+        RI = 0;
+    }
+}

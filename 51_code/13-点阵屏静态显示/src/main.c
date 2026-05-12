@@ -1,0 +1,21 @@
+#include "Com_Util.h"
+#include "Int_MatrixLED.h"
+
+// 主函数
+void main()
+{
+    // 定义点阵屏的显示内容
+      u8 led_pixels[8] = {0x00,0x66,0x99,0x42,0x24,0x18,0x00,0x00};
+    //u8 led_pixels[8] = {0x81, 0x42, 0x24, 0x18, 0x18, 0x24, 0x42, 0x81};
+   // u8 led_pixels[8] = {0x00, 0x5D, 0x55, 0x55, 0x55, 0x55, 0x5D, 0x00};
+
+    // 初始化点阵屏
+    Int_MatrixLED_Init();
+
+    // 设置点阵屏显示内容
+    Int_MatrixLED_SetPixels(led_pixels);
+
+    // 死循环
+    while (1)
+        ;
+}
